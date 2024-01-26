@@ -1,8 +1,9 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
+import DisplayBook from './partials/DisplayBook'
 
 const Books = () => {
-    const [books, setBooks] = useState([])
+  const [books, setBooks] = useState([])
   
   useEffect(() => {
     fetch("/books").then(
@@ -13,12 +14,15 @@ const Books = () => {
   return (
     <div>
       {/* try to see if you can click on a title and get details of the book */}
-      {console.log(books)}
+      {/* {console.log(books)} */}
+      {/* DISPLAY THE IMAGE, TITLE AND SNIPPET */}
       {(typeof books === 'undefined') ? (
         (<p>Loading...</p>)
       ) : (
         books.map(book  => {
-          return(<p key={book._id}>{book.title}</p>)
+          return(
+            <DisplayBook key={book._id} book={ book } />
+          )
         })
       )}
     </div>

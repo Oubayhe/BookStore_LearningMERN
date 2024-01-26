@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react'
 import Footer from './components/footer'
 import TopBar from './components/topBar'
 
@@ -23,7 +22,7 @@ function App() {
         <Route path='categories' element={ <Categories />} />
         <Route path='favorites' element={ <Favorites /> } />
         <Route path='create' element={ <Create />} />
-        <Route path='details' element={ <Details />} />
+        <Route path="books/:id" element={<Details />} />
       </Routes>
       <Footer />
     </div>
