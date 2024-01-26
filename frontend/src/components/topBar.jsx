@@ -6,16 +6,16 @@ const TopBar = () => {
     <header>
         <h1>MyBook</h1>
         <ul>
-            <Link to="/books">
+            <Link to="books">
                 <li>Books</li>
             </Link>
-            <Link to="/categories">
+            <Link to="categories">
                 <li>Categories</li>
             </Link>
-            <Link to="/favorites">
+            <Link to="favorites">
                 <li>Favorites</li>
             </Link>
-            <Link to="/create">
+            <Link to="create">
                 <li>New Book</li>
             </Link>
         </ul>
