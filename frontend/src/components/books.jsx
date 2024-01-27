@@ -11,6 +11,17 @@ const Books = () => {
     ).then(data => { setBooks(data) })
   }, [])
 
+  function deleteBook(bookId) {
+    const endpoint = `/books/delete/${bookId}`;
+
+    fetch(endpoint, {
+        method: 'DELETE',
+    })
+    .then(response => response.json())
+    .then(data => window.location.href = data.redirect)
+    .catch(err => console.log(err));
+  }
+
   return (
     <div>
       {/* try to see if you can click on a title and get details of the book */}
@@ -21,7 +32,7 @@ const Books = () => {
       ) : (
         books.map(book  => {
           return(
-            <DisplayBook key={book._id} book={ book } />
+            <DisplayBook key={book._id} book={ book } deleteBook={deleteBook} />
           )
         })
       )}

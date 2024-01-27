@@ -1,7 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const DisplayBook = ({ book }) => {
+const DisplayBook = ({ book, deleteBook }) => {
+
+    
     
   return (
     <Link to={`/books/${book._id}`}>
@@ -12,6 +14,10 @@ const DisplayBook = ({ book }) => {
             <h2>{book.title}</h2>
             <div className='book-snippet'>
                 {book.snippet}
+            </div>
+            <div className='buttons'>
+                <button onClick={() => {deleteBook(book._id)}}>Delete</button>
+                <button>Update</button>
             </div>
         </div>
     </Link>
