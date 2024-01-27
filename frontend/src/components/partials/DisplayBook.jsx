@@ -6,21 +6,25 @@ const DisplayBook = ({ book, deleteBook }) => {
     
     
   return (
-    <Link to={`/books/${book._id}`}>
-        <div className='display-book'>
-            <div className='image'>
-                <img src={`${book.image}`} alt='booki_mage' />
+    <div>
+        <Link to={`/books/${book._id}`}>
+            <div className='display-book'>
+                <div className='image'>
+                    <img src={`${book.image}`} alt='booki_mage' />
+                </div>
+                <h2>{book.title}</h2>
+                <div className='book-snippet'>
+                    {book.snippet}
+                </div>
             </div>
-            <h2>{book.title}</h2>
-            <div className='book-snippet'>
-                {book.snippet}
-            </div>
-            <div className='buttons'>
-                <button onClick={() => {deleteBook(book._id)}}>Delete</button>
+        </Link>
+        <div className='buttons'>
+            <button onClick={() => {deleteBook(book._id)}}>Delete</button>
+            <Link to={`update/${book._id}`}>
                 <button>Update</button>
-            </div>
+            </Link>
         </div>
-    </Link>
+    </div>
   )
 }
 

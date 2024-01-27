@@ -8,10 +8,12 @@ import Categories from './components/categories'
 import Favorites from './components/favorites'
 import Details from './components/details'
 import Create from './components/create'
+import Update from './components/update'
 
 function App() {
   const categories = ["Science", "Sport", "Cooking", "Computer Science"]
   const images = ["img2.jpg", "img3.jpg", "img4.jpg", "img5.jpg"]
+
 
   return (
     <div>
@@ -24,6 +26,7 @@ function App() {
         <Route path='favorites' element={ <Favorites /> } />
         <Route path='create' element={ <Create images={images} categories={categories} />} />
         <Route path="books/:id" element={<Details />} />
+        <Route path="books/update/:id" element={<Update images={images} categories={categories} />} />
       </Routes>
       <Footer />
     </div>

@@ -11,6 +11,7 @@ const Books = () => {
     ).then(data => { setBooks(data) })
   }, [])
 
+  // Delete function
   function deleteBook(bookId) {
     const endpoint = `/books/delete/${bookId}`;
 
@@ -22,6 +23,7 @@ const Books = () => {
     .catch(err => console.log(err));
   }
 
+  
   return (
     <div>
       {/* try to see if you can click on a title and get details of the book */}
@@ -32,7 +34,7 @@ const Books = () => {
       ) : (
         books.map(book  => {
           return(
-            <DisplayBook key={book._id} book={ book } deleteBook={deleteBook} />
+            <DisplayBook key={book._id} book={ book } deleteBook={deleteBook}/>
           )
         })
       )}
