@@ -1,5 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+// import { CiEdit } from "react-icons/ci";
+// import { FaRegTrashCan } from "react-icons/fa6";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTrashCan, faPenToSquare } from '@fortawesome/free-solid-svg-icons'
+
+
+
 
 const DisplayBook = ({ book, deleteBook }) => {
 
@@ -7,7 +14,7 @@ const DisplayBook = ({ book, deleteBook }) => {
     
   return (
     <div className='oneBook-card'>
-        <Link to={`/books/${book._id}`}>
+        <Link to={`/books/${book._id}`} className='link-style'>
             <div className='display-book'>
                 <div className='image'>
                     <img src={`${book.image}`} alt='booki_mage' />
@@ -21,10 +28,12 @@ const DisplayBook = ({ book, deleteBook }) => {
             </div>
         </Link>
         <div className='buttons'>
-            <button onClick={() => {deleteBook(book._id)}}>Delete</button>
-            <Link to={`update/${book._id}`}>
-                <button>Update</button>
+            <Link to={`update/${book._id}`} className='link-style'>
+                <button><FontAwesomeIcon icon={faPenToSquare} /></button>
             </Link>
+            <button onClick={() => {deleteBook(book._id)}}>
+                <FontAwesomeIcon icon={faTrashCan} />
+            </button>
         </div>
     </div>
   )

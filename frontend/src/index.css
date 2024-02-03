@@ -4,9 +4,13 @@
 :root {
     --footer-bg: black;
     --footer-text-color: #fff;
-    --header-bg: #fff;
-    --body-bg: #f1f1f1;
+    --body-bg: #f6f8fa;
     --text-color: #555;
+    --gray-bg: #f6f8fa;
+    --border-color: #ced3e0;
+    --white-bg: #fff;
+    --title-color: #1f2328;
+    --snippet-color: #656d76;
 }
 
 
@@ -21,28 +25,53 @@ body {
     background-color: var(--body-bg);
 }
 
-header {
-    background-color: var(--header-bg);
-    padding: 20px 50px;
+.top-bar {
+    margin: 20px;
+    width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 }
+header {
+    position: fixed;
+    top: 20px;
+    padding: 10px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    border-radius: 50px;
+    background-color: var(--white-bg);
+    opacity: 0.98;
+    border: none;
+    z-index: 1;
+}
+
 header ul {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 8px;
+    gap: 15px;
 
+}
+header .mybook {
+    font-size: 25px;
+    font-weight: 800;
+    /* padding: 5px 15px; */
 }
 header ul li {
     list-style: none;
     color: var(--text-color);
+    font-size: 18px;
+    font-weight: 700;
 }
 
 /* All Books */
 .books {
-    margin: 30px;
+    margin-top: 100px;
+    margin-bottom: 70px;
+    margin-left: auto;
+    margin-right: auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -54,32 +83,83 @@ header ul li {
 .oneBook-card {
     width: 60%;
     height: auto;
-    display: inline;
-    background-color: var(--header-bg);
+    background-color: var(--white-bg);
     position: relative;
     display: flex;
-    border: 1px solid var(--footer-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+    overflow: hidden; 
 }
+
 .oneBook-card .display-book {
     display: flex;
-    gap: 18px;
+    gap: 20px;
+    border-radius: inherit;
+    overflow: hidden; 
 }
-.onebook-information {
 
+.onebook-information {
+    margin: 15px 0;
+    width: calc(100% - 200px);
 }
+.onebook-information h2 {
+    color: var(--title-color);
+    margin-bottom: 12px;
+}
+.onebook-information .book-snippet {
+    color: var(--snippet-color);
+}
+.link-style {
+    text-decoration: none;
+}
+
+.display-book img {
+    width: 200px; 
+    height: 100%; 
+    object-fit: cover; 
+    border-radius: inherit; 
+}
+
 .buttons {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    
+    width: 50px;
+    margin: 15px 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.buttons button {
+    display: block;
+    outline: none;
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    background-color: var(--white-bg);
+    cursor: pointer;
+    transition: all ease-in-out 0.3s;
+    border-radius: 50%;
+    border: 1px solid var(--white-bg);
+    color: var(--border-color);
+}
+.buttons button:hover {
+    border-radius: 50%;
+    border: 1px solid var(--border-color);
+    color: var(--title-color)
 }
 
 /* A Book Details */
 .book-details {
     width: 60%;
-    margin: 40px auto;
-    height: 100vh;
+    margin: 70px auto;
+    min-height: 100vh;
 }
+.book-details .book-title {
+    font-size: 30px;
+    font-weight: 800;
+}
+.book-details .book-content {
+    margin-top: 40px;
+}
+
 
 /* The Form */
 .create-book {
@@ -90,7 +170,7 @@ form {
     
     width: 300px;
     height: auto;
-    background: var(--header-bg);
+    background: var(--white-bg);
     border: 1px solid var(--text-color);
     border-radius: 15px;
     padding: 15px 25px;
