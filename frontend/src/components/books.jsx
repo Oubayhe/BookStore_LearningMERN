@@ -25,7 +25,7 @@ const Books = () => {
 
   
   return (
-    <div>
+    <div className='books'>
       {/* try to see if you can click on a title and get details of the book */}
       {/* {console.log(books)} */}
       {/* DISPLAY THE IMAGE, TITLE AND SNIPPET */}
@@ -34,7 +34,7 @@ const Books = () => {
       ) : (
         books.map(book  => {
           return(
-            <DisplayBook key={book._id} book={ book } deleteBook={deleteBook}/>
+            <DisplayBook className="hello" key={book._id} book={ book } deleteBook={deleteBook}/>
           )
         })
       )}

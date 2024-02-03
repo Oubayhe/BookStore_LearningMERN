@@ -6,15 +6,17 @@ const DisplayBook = ({ book, deleteBook }) => {
     
     
   return (
-    <div>
+    <div className='oneBook-card'>
         <Link to={`/books/${book._id}`}>
             <div className='display-book'>
                 <div className='image'>
                     <img src={`${book.image}`} alt='booki_mage' />
                 </div>
-                <h2>{book.title}</h2>
-                <div className='book-snippet'>
-                    {book.snippet}
+                <div className='onebook-information'>
+                    <h2>{book.title}</h2>
+                    <div className='book-snippet'>
+                        {book.snippet}
+                    </div>
                 </div>
             </div>
         </Link>
